@@ -9,7 +9,7 @@ Constantly running xref makes you look smarter (by suppressing stupid mistakes)!
 - Add `:exref` to your list of dependencies in `mix.exs`.
 - `$ mix deps.get`
 - `$ mix compile.exref` checks all function calls in your mix project.
-- If you want to run `exref` every time you compile your mix project, overwrite `compilers` of  `project/0` in your `mix.exs`.
+- If you want to run `exref` every time you compile your mix project, overwrite `compilers` of  `project/0` in your `mix.exs`:
 
     ```ex
     def project do
