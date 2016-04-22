@@ -10,7 +10,7 @@ defmodule Exref.Mixfile do
       elixir:          "~> 1.2",
       build_embedded:  Mix.env == :prod,
       start_permanent: Mix.env == :prod,
-      deps:            [],
+      deps:            deps,
       description:     description,
       package:         package,
       source_url:      @github_url,
@@ -34,6 +34,12 @@ defmodule Exref.Mixfile do
       maintainers: ["Shunsuke Kirino"],
       licenses:    ["MIT"],
       links:       %{"GitHub repository" => @github_url},
+    ]
+  end
+
+  defp deps do
+    [
+      {:xref_runner, github: "X4lldux/xref_runner", branch: "bugfix-for-52"},
     ]
   end
 end
