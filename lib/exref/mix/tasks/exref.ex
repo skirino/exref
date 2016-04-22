@@ -30,7 +30,6 @@ defmodule Mix.Tasks.Compile.Exref do
   defp gen_comment(xref_warn) do
     %{filename: filename, line: line, source: source, check: check} = xref_warn
     target = xref_warn[:target]
-
     pos = case {filename, line} do
             {"", _} -> ""
             {_, 0}  -> "#{filename} "
@@ -41,7 +40,7 @@ defmodule Mix.Tasks.Compile.Exref do
   end
 
   defp gen_comment_txt(check, {sm, sf, sa}, tmfa), do: gen_comment_txt(check, mfa_to_string(sm, sf, sa), tmfa)
-  defp gen_comment_txt(check, smfa, {tm, tf, ta}), do: gen_comment_txt(check, mfa, mfa_to_string(tm, tf, ta))
+  defp gen_comment_txt(check, smfa, {tm, tf, ta}), do: gen_comment_txt(check, smfa, mfa_to_string(tm, tf, ta))
   defp gen_comment_txt(:undefined_function_calls, smfa, tmfa),  do: "#{smfa} calls undefined function #{tmfa}"
   defp gen_comment_txt(:undefined_functions, smfa, _tmfa),      do: "#{smfa} is not defined as a function"
   defp gen_comment_txt(:locals_not_used, smfa, _tmfa),          do: "#{smfa} is an unused local function"
