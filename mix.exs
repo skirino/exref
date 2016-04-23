@@ -6,7 +6,7 @@ defmodule Exref.Mixfile do
   def project do
     [
       app:             :exref,
-      version:         "0.1.0",
+      version:         "0.1.1",
       elixir:          "~> 1.2",
       build_embedded:  Mix.env == :prod,
       start_permanent: Mix.env == :prod,
@@ -16,10 +16,6 @@ defmodule Exref.Mixfile do
       source_url:      @github_url,
       homepage_url:    @github_url,
     ]
-  end
-
-  def application do
-    []
   end
 
   defp description do
